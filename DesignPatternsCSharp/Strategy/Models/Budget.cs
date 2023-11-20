@@ -1,4 +1,4 @@
-﻿namespace Strategy
+﻿namespace Strategy.Models
 {
     internal class Budget(double value)
     {
