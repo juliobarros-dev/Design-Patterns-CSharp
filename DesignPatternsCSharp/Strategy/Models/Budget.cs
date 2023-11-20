@@ -2,6 +2,6 @@
 {
     internal class Budget(double value)
     {
-        public double Value { get; set; } = value;
+        internal double Value { get; set; } = value;
     }
 }
