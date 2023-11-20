@@ -1,0 +1,2 @@
+﻿<p>We will employ the Strategy Pattern to address the challenge of managing similar classes with minor behavioral differences. This approach helps prevent code duplication, facilitating code maintenance and scalability.</p>
+<p>As an illustrative example, we will focus on taxes, as it is common to encounter numerous taxes with varying values.</p>
