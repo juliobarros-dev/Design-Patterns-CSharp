@@ -4,6 +4,6 @@ namespace Strategy.Models.Taxes
 {
     internal class Iss : ITax
     {
-        public double Calculate(Budget budget) => budget.Value * 0.06;
+        public double Calculate(double value) => value * 0.06;
     }
 }

@@ -4,6 +4,6 @@ namespace Strategy.Abstractions
 {
     internal interface ITax
     {
-        double Calculate(Budget budget);
+        double Calculate(double value);
     }
 }
