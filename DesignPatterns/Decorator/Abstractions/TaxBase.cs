@@ -17,8 +17,6 @@ namespace Decorator.Abstractions
 
         protected double AnotherTaxValue(Order order)
         {
-            // With the constructor without parameter, now the AnotherTax can be null and is not necessary to instantiate a new Tax everytime. This verification
-            // Will prevent null reference exception
             if (AnotherTax is null) return 0;
 
             return AnotherTax.Calculate(order);
