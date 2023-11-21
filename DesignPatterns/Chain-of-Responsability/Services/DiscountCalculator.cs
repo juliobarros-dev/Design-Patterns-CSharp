@@ -1,4 +1,5 @@
 ﻿using Chain_of_Responsability.Models;
+using Chain_of_Responsability.Models.Discounts;
 
 namespace Chain_of_Responsability.Services
 {
@@ -6,18 +7,17 @@ namespace Chain_of_Responsability.Services
     {
         public double Calculate(Budget budget)
         {
-            // Here is a bad example of how the calculator should work. As we can see if we need to change the discount condition or add more discount, this class would increase exponentially
+            // Now we encapsulated our discount rules but the calculator is not good yet because the 'if problem' still persists.
+            // If we want to add more discounts to the system, everytime it happen we would need to readjust the calculator. 
 
-            if (budget.Items.Count > 5)
+            double desconto = new DiscountPerFiveItems().Discount(budget);
+
+            if (desconto == 0)
             {
-                return budget.Value * 0.1;
-            }
-            else if (budget.Value > 500)
-            {
-                return budget.Value * 0.07;
+                desconto = new DiscountPerMoreThanFiveHundred().Discount(budget);
             }
 
-            return 0;
+            return desconto;
         }
     }
 }
