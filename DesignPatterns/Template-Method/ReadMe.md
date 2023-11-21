@@ -1,0 +1,3 @@
+﻿<p>The Template Method is a behavioral design pattern that defines the skeleton of an algorithm, allowing certain steps of the algorithm to be implemented by subclasses. In C#, this pattern is commonly implemented using abstract methods and abstract classes.</p>
+<br>
+<p>As an ilustrative example we will work with Taxes. Based base on a particular condition each Tax should return the maximum or minimal tax rate.</p>
