@@ -2,29 +2,19 @@
 
 namespace Chain_of_Responsability.Models.Discounts
 {
-    internal class DiscountPerItemEqualsTo(string item, int discountRate) : IDiscount
+    internal class DiscountPerItemEqualsTo(string item, int discountRate) : DiscountBase(discountRate)
     {
         public string Item { get; set; } = item;
-        public double DiscountRate { get; set; } = discountRate;
-        public IDiscount? Next { get; set; }
 
-        public double Discount(Order order)
+        public override double Discount(Order order)
         {
-            var discount = 0.00;
-
             var itemExists = order.Items.FirstOrDefault(x => x.Name.Equals(Item));
 
-            if (itemExists is not null)
-            {
-                discount = order.Value * (DiscountRate / 100);
-            }
+            if (itemExists is not null) return order.Value * (DiscountRate / 100);
 
-            if (Next is not null)
-            {
-                discount = Next.Discount(order);
-            }
+            if (Next is not null) return Next.Discount(order);
 
-            return discount;
+            return 0;
         }
     }
 }
