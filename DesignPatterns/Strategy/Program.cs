@@ -17,4 +17,6 @@ TaxCalculator.Calculate(budget1.Value, icc);
 TaxCalculator.Calculate(budget2.Value, icc);
 TaxCalculator.Calculate(budget3.Value, icc);
 
+Console.ReadKey();
+
 // After executing the program the result must be: 50, 30, 25, 140, 430

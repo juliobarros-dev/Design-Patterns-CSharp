@@ -7,17 +7,20 @@ namespace Chain_of_Responsability.Services
     {
         public double Calculate(Budget budget)
         {
-            // Now we encapsulated our discount rules but the calculator is not good yet because the 'if problem' still persists.
-            // If we want to add more discounts to the system, everytime it happen we would need to readjust the calculator. 
+            // Here the calculator is only responsible for organizing the chain and trigger it
 
-            double desconto = new DiscountPerFiveItems().Discount(budget);
+            DiscountPerFiveItems discountPerItem = new();
+            DiscountPerMoreThanFiveHundred discountPerValue = new();
+            NoDiscount noDiscount = new();
 
-            if (desconto == 0)
-            {
-                desconto = new DiscountPerMoreThanFiveHundred().Discount(budget);
-            }
+            // Here the chain is being created declaring that the next discount must be DiscountPerValue
+            discountPerItem.Next = discountPerValue;
 
-            return desconto;
+            // To prevent exceptions, our calculator needs to determine when to terminate the chain. In this case, if any discount rule is applied, the discount needs to be 0.
+            discountPerValue.Next = noDiscount;
+
+            // Here we are requesting to apply the discountPerItems, if the discount is applied it will return the discount value otherwise will call the discountPerValue
+            return discountPerItem.Discount(budget);
         }
     }
 }
