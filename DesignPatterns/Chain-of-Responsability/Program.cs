@@ -1,21 +1,17 @@
 ﻿using Chain_of_Responsability.Models;
 using Chain_of_Responsability.Services;
 
-DiscountCalculator calculator = new();
+Order order = new(250);
 
-Budget budget = new(250);
+order.AddItems(new Item("Pen", 500));
+order.AddItems(new Item("Pencil", 500));
+order.AddItems(new Item("Paper", 500));
+order.AddItems(new Item("Notebook", 500));
 
-budget.AddItems(new Item("Pen", 500));
-budget.AddItems(new Item("Pencil", 500));
-budget.AddItems(new Item("Paper", 500));
-budget.AddItems(new Item("Notebook", 500));
-budget.AddItems(new Item("Tablet", 500));
-budget.AddItems(new Item("Phone", 500));
-
-double discounts = calculator.Calculate(budget);
+double discounts = DiscountCalculator.Calculate(order);
 
 Console.WriteLine(discounts);
 
 Console.ReadKey();
 
-// After executing the program the result must be: 25
+// After executing the program the result must be: 125

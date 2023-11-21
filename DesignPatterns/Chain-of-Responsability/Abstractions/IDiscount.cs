@@ -4,7 +4,7 @@ namespace Chain_of_Responsability.Abstractions
 {
     internal interface IDiscount
     {
-        IDiscount Next { get; set; }
-        double Discount(Budget budget);
+        IDiscount? Next { get; set; }
+        double Discount(Order order);
     }
 }
