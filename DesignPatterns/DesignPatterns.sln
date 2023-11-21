@@ -15,6 +15,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Template-Method-Patterm", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Template-Method", "Template-Method\Template-Method.csproj", "{CED5A585-32AF-4675-BF88-DD58610A03B3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Decorator-Pattern", "Decorator-Pattern", "{1649418A-E674-4FCD-9421-F071B01C0B49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Decorator", "Decorator\Decorator.csproj", "{4E96E1EE-FDD0-4055-9CA2-499D0575E64B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,10 @@ Global
 		{CED5A585-32AF-4675-BF88-DD58610A03B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CED5A585-32AF-4675-BF88-DD58610A03B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CED5A585-32AF-4675-BF88-DD58610A03B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E96E1EE-FDD0-4055-9CA2-499D0575E64B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E96E1EE-FDD0-4055-9CA2-499D0575E64B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E96E1EE-FDD0-4055-9CA2-499D0575E64B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E96E1EE-FDD0-4055-9CA2-499D0575E64B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,6 +49,7 @@ Global
 		{ED95237A-7960-4991-B32F-F394AFF24077} = {E1FDF4D8-31BD-489C-A4B4-6D034F3AD673}
 		{09627EC5-853F-42D9-8687-9BC8485E9C0C} = {1B9203B1-C56D-4113-98F2-0BFE1E63949A}
 		{CED5A585-32AF-4675-BF88-DD58610A03B3} = {64DA2041-E001-41DE-A5B1-ED0AF1242936}
+		{4E96E1EE-FDD0-4055-9CA2-499D0575E64B} = {1649418A-E674-4FCD-9421-F071B01C0B49}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CFBF5A23-39B5-4DF1-A279-1C9B77AC49C9}
