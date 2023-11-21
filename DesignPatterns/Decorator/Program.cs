@@ -1,13 +1,17 @@
 ﻿using Decorator.Models;
 using Decorator.Models.Taxes;
 
-// At this stage, we have the flexibility to combine multiple taxes, ensuring that each selected tax is applied, but we still have a problem with the implementation
-// This way we are stuck in a loop that always need a new Tax so we can instantiate our classes
-Iss iss = new(new Icms());
+Iss iss = new();
+Iss issAndIcms = new(new Icms());
+
 Order order = new(500);
 
-var issIcmsTax = iss.Calculate(order);
+var issTax = iss.Calculate(order);
+var issIcmsTax = issAndIcms.Calculate(order);
 
+Console.WriteLine(issTax);
 Console.WriteLine(issIcmsTax);
 
 Console.ReadKey();
+
+// After executing the program the result must be: 30 and 80
