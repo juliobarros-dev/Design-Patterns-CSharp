@@ -2,7 +2,7 @@
 <br>
 <p>For this illustration, we will employ a discount calculator.</p>
 <br>
-<p><strong>Follow the commit history to understand the problem and see to implementation of the Strategy Pattern </strong></p>
+<p><strong>Follow the commit history to understand the problem and see to implementation of the Chain of Responsibility Pattern </strong></p>
 
 <!-- ## Examples of Using the Chain of Responsibility Pattern -->
 
