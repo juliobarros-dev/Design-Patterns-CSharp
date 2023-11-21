@@ -2,14 +2,14 @@
 
 namespace Template_Method.Models.Taxes
 {
-    internal class Ikcv : ITax
+    internal class Ikcv : TaxBase
     {
-        public double Calculate(Order order)
-        {
-            if (order.Value > 500 && ItemValueMoreThanOneHundred(order)) return order.Value * 0.1;
+        // Now each specific tax stablish it own rule and value of tax. The common code is encapsluted on the base class
+        public override bool UseMaximumTaxRate(Order order) => order.Value > 500 && ItemValueMoreThanOneHundred(order);
 
-            return order.Value * 0.06;
-        }
+        public override double MaximumTax(Order order) => order.Value * 0.1;
+
+        public override double MinimumTax(Order order) => order.Value * 0.06;
 
         private static bool ItemValueMoreThanOneHundred(Order order) => order.Items.Any(x => x.Value > 100);
     }

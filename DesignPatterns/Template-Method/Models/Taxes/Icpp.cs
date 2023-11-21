@@ -2,14 +2,13 @@
 
 namespace Template_Method.Models.Taxes
 {
-    internal class Icpp : ITax
+    internal class Icpp : TaxBase
     {
-        public double Calculate(Order order)
-        {
-            // At this point we have 2 classes that are taxes and have similar behavior, they both check a condition to decide either maximum or minum tax.
-            if (order.Value >= 500) return order.Value * 0.07;
+        // At this point we are using a common class that implements the commom code and the specific classes are responsible to stablish their own rule of charge.
+        public override bool UseMaximumTaxRate(Order order) => order.Value >= 500;
 
-            return order.Value * 0.05;
-        }
+        public override double MaximumTax(Order order) => order.Value * 0.07;
+
+        public override double MinimumTax(Order order) => order.Value * 0.05;
     }
 }
