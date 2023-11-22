@@ -9,15 +9,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Strategy", "Strategy\Strate
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chain-of-Responsibility-Pattern", "Chain-of-Responsibility-Pattern", "{1B9203B1-C56D-4113-98F2-0BFE1E63949A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chain-of-Responsibility", "Chain-of-Responsability\Chain-of-Responsibility.csproj", "{09627EC5-853F-42D9-8687-9BC8485E9C0C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chain-of-Responsibility", "Chain-of-Responsability\Chain-of-Responsibility.csproj", "{09627EC5-853F-42D9-8687-9BC8485E9C0C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Template-Method-Patterm", "Template-Method-Patterm", "{64DA2041-E001-41DE-A5B1-ED0AF1242936}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Template-Method", "Template-Method\Template-Method.csproj", "{CED5A585-32AF-4675-BF88-DD58610A03B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Template-Method", "Template-Method\Template-Method.csproj", "{CED5A585-32AF-4675-BF88-DD58610A03B3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Decorator-Pattern", "Decorator-Pattern", "{1649418A-E674-4FCD-9421-F071B01C0B49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Decorator", "Decorator\Decorator.csproj", "{4E96E1EE-FDD0-4055-9CA2-499D0575E64B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Decorator", "Decorator\Decorator.csproj", "{4E96E1EE-FDD0-4055-9CA2-499D0575E64B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "State-Pattern", "State-Pattern", "{2A9BDE8B-1593-4266-83D4-F91235229655}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "State", "State\State.csproj", "{3CF6896D-307A-4099-AF62-1A17B63F40C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +45,10 @@ Global
 		{4E96E1EE-FDD0-4055-9CA2-499D0575E64B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E96E1EE-FDD0-4055-9CA2-499D0575E64B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E96E1EE-FDD0-4055-9CA2-499D0575E64B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CF6896D-307A-4099-AF62-1A17B63F40C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CF6896D-307A-4099-AF62-1A17B63F40C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CF6896D-307A-4099-AF62-1A17B63F40C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CF6896D-307A-4099-AF62-1A17B63F40C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,6 +58,7 @@ Global
 		{09627EC5-853F-42D9-8687-9BC8485E9C0C} = {1B9203B1-C56D-4113-98F2-0BFE1E63949A}
 		{CED5A585-32AF-4675-BF88-DD58610A03B3} = {64DA2041-E001-41DE-A5B1-ED0AF1242936}
 		{4E96E1EE-FDD0-4055-9CA2-499D0575E64B} = {1649418A-E674-4FCD-9421-F071B01C0B49}
+		{3CF6896D-307A-4099-AF62-1A17B63F40C2} = {2A9BDE8B-1593-4266-83D4-F91235229655}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CFBF5A23-39B5-4DF1-A279-1C9B77AC49C9}
