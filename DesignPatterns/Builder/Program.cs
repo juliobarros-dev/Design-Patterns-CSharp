@@ -1,16 +1,18 @@
 ﻿using Builder.Models;
+using Builder.Utils;
 
-IList<Item> items = new List<Item>();
+InvoiceBuilder invoiceBuilder = new();
 
-double invoiceValue = 0;
+invoiceBuilder.AddCompanyName("Company");
+invoiceBuilder.AddCompanyDocument("Document");
+invoiceBuilder.AddInvoiceItem(new Item("Pen", 10.00));
+invoiceBuilder.AddInvoiceItem(new Item("Pencil", 05.00));
+invoiceBuilder.AddCreatedDate();
+invoiceBuilder.AddComment("Some comment.");
 
-foreach (var item in items)
-{
-    invoiceValue += item.Value;
-}
+// Now all the logic to create a new Invoice is inside the InvoiceBuilder and in our Program is easy to read and understand what parameters are needed to create an Invoice.
+Invoice invoice = invoiceBuilder.Build();
 
-double tax = invoiceValue * 0.05;
+Console.WriteLine(invoice.Name);
 
-Invoice invoice = new("Receipt", "Document", DateTime.Now, invoiceValue, tax, items, "Comments");
-
-// Look how complex is to instantiate our Invoice class due to all informations need on its constructor. That's the problem that will be resolved with Builder Patter.
+Console.ReadKey();
