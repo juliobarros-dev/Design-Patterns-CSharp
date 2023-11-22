@@ -2,7 +2,7 @@
 <br>
 <p>As an ilustrative example we will explore discounts based on the order's state</p>
 <br>
-<p><strong>Follow the commit history to understand the problem and see to implementation of the Decorator Pattern </strong></p>
+<p><strong>Follow the commit history to understand the problem and see to implementation of the State Pattern </strong></p>
 
 <!-- ## Examples of Using the State Pattern -->
 
