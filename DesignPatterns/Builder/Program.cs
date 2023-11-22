@@ -3,7 +3,6 @@ using Builder.Utils;
 
 InvoiceBuilder invoiceBuilder = new();
 
-// Now our builder has a Fluent Interface
 invoiceBuilder
     .AddCompanyName("Company")
     .AddCompanyDocument("Document")
@@ -12,9 +11,12 @@ invoiceBuilder
     .AddCreatedDate()
     .AddComment("Some comment.");
 
-// Now all the logic to create a new Invoice is inside the InvoiceBuilder and in our Program is easy to read and understand what parameters are needed to create an Invoice.
 Invoice invoice = invoiceBuilder.Build();
 
 Console.WriteLine(invoice.Name);
+Console.WriteLine(invoice.Value);
+Console.WriteLine(invoice.Tax);
 
 Console.ReadKey();
+
+// After executing the program the result must be: Company, 15 and 0.75
