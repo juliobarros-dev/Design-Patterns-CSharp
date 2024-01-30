@@ -1,8 +1,9 @@
-﻿using Observer.Models;
+﻿using Oberserver.Abstractions;
+using Observer.Models;
 
 namespace Observer.Utils
 {
-    internal class InvoiceBuilder
+    public class InvoiceBuilder
     {
         public string Name { get; private set; } = string.Empty;
         public string Document { get; private set; } = string.Empty;
@@ -11,6 +12,7 @@ namespace Observer.Utils
         public IList<Item> Items { get; private set; } = new List<Item>();
         public string Comments { get; private set; } = string.Empty;
         public DateTime CreatedAt { get; private set; }
+        private IList<IInvoiceAction> _actions = new List<IInvoiceAction>();
 
         public InvoiceBuilder AddCompanyName(string name)
         {
@@ -43,28 +45,19 @@ namespace Observer.Utils
             return this;
         }
 
-        private void SendInvoiceByEmail(Invoice invoice)
+        public void AddAction(IInvoiceAction action)
         {
-            Console.WriteLine("Invoice sent by e-mail.");
-        }
-
-        private void SendInvoiceBySms(Invoice invoice)
-        {
-            Console.WriteLine("Invoice sent by SMS.");
-        }
-
-        private void SaveInvoice(Invoice invoice)
-        {
-            Console.WriteLine("Invoice saved.");
+            _actions.Add(action);
         }
 
         public Invoice Build()
         {
             var invoice =  new Invoice(Name, Document, CreatedAt, Value, Tax, Items, Comments);
 
-            SaveInvoice(invoice);
-            SendInvoiceByEmail(invoice);
-            SendInvoiceBySms(invoice);
+            foreach (var action in _actions)
+            {
+                action.Execute(invoice);
+            }
 
             return invoice;
         }

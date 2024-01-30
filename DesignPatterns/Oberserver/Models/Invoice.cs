@@ -1,6 +1,6 @@
 ﻿namespace Observer.Models
 {
-    internal class Invoice(string name, string document, DateTime createdAt, double value, double tax, IList<Item> items, string commments)
+    public class Invoice(string name, string document, DateTime createdAt, double value, double tax, IList<Item> items, string commments)
     {
         public string Name { get; set; } = name;
         public string Document { get; set; } = document;
