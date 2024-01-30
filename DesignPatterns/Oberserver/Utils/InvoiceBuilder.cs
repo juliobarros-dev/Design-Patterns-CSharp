@@ -43,9 +43,30 @@ namespace Observer.Utils
             return this;
         }
 
+        private void SendInvoiceByEmail(Invoice invoice)
+        {
+            Console.WriteLine("Invoice sent by e-mail.");
+        }
+
+        private void SendInvoiceBySms(Invoice invoice)
+        {
+            Console.WriteLine("Invoice sent by SMS.");
+        }
+
+        private void SaveInvoice(Invoice invoice)
+        {
+            Console.WriteLine("Invoice saved.");
+        }
+
         public Invoice Build()
         {
-            return new Invoice(Name, Document, CreatedAt, Value, Tax, Items, Comments);
+            var invoice =  new Invoice(Name, Document, CreatedAt, Value, Tax, Items, Comments);
+
+            SaveInvoice(invoice);
+            SendInvoiceByEmail(invoice);
+            SendInvoiceBySms(invoice);
+
+            return invoice;
         }
     }
 }
